@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Araras – Ölmalerei, Aquarelle, Radierungen</title>
+    <meta name="description" content="Araras – Kunst aus Leidenschaft. Entdecken Sie Ölmalerei, Aquarelle und Radierungen. Ausstellungen, Vita und Kontakt.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            background: #fef9f0;  /* warmer, eleganter Hintergrund */
+            color: #2c2b28;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Headerbereich */
+        .site-header {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            border-bottom: 1px solid #e8e0d3;
+            background: #fffcf8;
+        }
+
+        .site-title {
+            font-size: 2.2rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+            color: #3a2c29;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-subtitle {
+            font-size: 1.1rem;
+            color: #6b5a4e;
+            font-style: italic;
+            border-top: 1px solid #e0d6ca;
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            background: #f5ede3;
+            border-bottom: 2px solid #ddd0c0;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.2rem;
+            list-style: none;
+            padding: 0.6rem 1rem;
+        }
+
+        .nav-links li a {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            color: #4a3b34;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links li a:hover {
+            background: #e3d5c8;
+            color: #1f1b18;
+        }
+
+        /* Hauptinhalt */
+        .main-content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .page-title {
+            font-size: 1.9rem;
+            font-weight: normal;
+            border-left: 5px solid #b97f5e;
+            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            color: #3e2f29;
+        }
+
+        /* Galerie-ähnliche Darstellung für die Bildkategorien */
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .art-card {
+            background: #fefaf5;
+            border: 1px solid #ece2d7;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            padding: 1rem 0.5rem 1rem;
+        }
+
+        .art-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+        }
+
+        .placeholder-img {
+            background: #e7ddd2;
+            width: 90%;
+            margin: 0 auto;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #8c7766;
+            font-family: monospace;
+            background-image: radial-gradient(circle at 10% 30%, rgba(160,120,90,0.08) 2%, transparent 2.5%);
+            background-size: 20px 20px;
+        }
+
+        .art-card h3 {
+            margin: 1rem 0 0.3rem;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #724b34;
+        }
+
+        .art-card p {
+            font-size: 0.85rem;
+            color: #7f6a5c;
+            padding: 0 0.8rem 0.8rem;
+        }
+
+        /* Vita / Ausstellungen etc. */
+        .vita-section, .ausstellungen-section, .kontakt-content {
+            background: #fefaf5;
+            padding: 1.2rem 1.8rem;
+            border-radius: 20px;
+            margin-top: 1.2rem;
+            border: 1px solid #efe3d7;
+        }
+
+        .vita-list {
+            list-style: none;
+            margin-top: 0.8rem;
+        }
+
+        .vita-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .vita-list li:before {
+            content: "•";
+            color: #b97f5e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .sub-list {
+            margin-left: 1.5rem;
+            margin-top: 0.3rem;
+            list-style: circle;
+            color: #5c4b3e;
+        }
+
+        .contact-details {
+            background: #fff9f3;
+            padding: 1.5rem;
+            border-radius: 24px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-email {
+            font-size: 1.6rem;
+            word-break: break-all;
+            background: #f2e7de;
+            display: inline-block;
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            margin-top: 0.8rem;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            background: #f5ede3;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.75rem;
+            color: #8a786a;
+            border-top: 1px solid #e3d5c8;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e3d5c8, transparent);
+        }
+
+        a {
+            color: #8b5a3e;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 680px) {
+            .main-content {
+                padding: 1.5rem;
+            }
+            .site-title {
+                font-size: 1.8rem;
+            }
+            .nav-links li a {
+                padding: 0.4rem 0.9rem;
+                font-size: 0.85rem;
+            }
+            .contact-email {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="site-header">
+        <h1 class="site-title">Araras</h1>
+        <div class="site-subtitle">Ölmalerei · Aquarelle · Radierungen</div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul class="nav-links">
+            <li><a href="#" data-page="startseite" class="nav-link active-nav">Startseite</a></li>
+            <li><a href="#" data-page="oelmalerei" class="nav-link">Ölmalerei</a></li>
+            <li><a href="#" data-page="aquarelle" class="nav-link">Aquarelle</a></li>
+            <li><a href="#" data-page="radierungen" class="nav-link">Radierungen</a></li>
+            <li><a href="#" data-page="ausstellungen" class="nav-link">Ausstellungen</a></li>
+            <li><a href="#" data-page="vita" class="nav-link">Vita</a></li>
+            <li><a href="#" data-page="kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content" id="dynamic-content">
+        <!-- Startseite Inhalt wird dynamisch geladen, aber als fallback direkt eingefügt -->
+        <div id="page-render">
+            <!-- initial startseite -->
+            <h2 class="page-title">Startseite</h2>
+            <div style="font-size:1.05rem; line-height:1.6; background: #fefaf5; padding:1rem 1.5rem; border-radius: 28px;">
+                <p>Willkommen auf der Kunstseite von <strong>Araras</strong> – entdecken Sie eine einzigartige Sammlung von Ölmalerei, zarten Aquarellen und ausdrucksstarken Radierungen.</p>
+                <p style="margin-top:0.8rem">Die Werke zeugen von einer intensiven Auseinandersetzung mit Licht, Farbe und Textur. Lassen Sie sich von der Vielfalt der Motive inspirieren – von feinen Porträts bis hin zu atmosphärischen Landschaften.</p>
+                <hr>
+                <p style="font-style:italic; color:#8c6e58;">„Kunst ist die Brücke zwischen sichtbaren und unsichtbaren Welten.“</p>
+            </div>
+
+            <div class="art-grid" style="margin-top: 2rem;">
+                <div class="art-card">
+                    <div class="placeholder-img">🎨 Öl auf Leinwand</div>
+                    <h3>Farbklänge</h3>
+                    <p>Ölmalerei, 2024</p>
+                </div>
+                <div class="art-card">
+                    <div class="placeholder-img">💧 Aquarell auf Papier</div>
+                    <h3>Garten der Stille</h3>
+                    <p>Aquarell, 2023</p>
+                </div>
+                <div class="art-card">
+                    <div class="placeholder-img">🖌️ Radierung</div>
+                    <h3>Strukturen</h3>
+                    <p>Radierung, 2022</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Araras – Alle Rechte vorbehalten. | Präsentiert als Azure Static Web App | Theme inspiriert von der Kunstwelt</p>
+        <p style="margin-top:0.3rem">STOLZ PRÄSENTIERT MIT STATIC HOSTING · AZURE STATIC WEB APPS</p>
+    </footer>
+</div>
+
+<script>
+    // Vollständige Inhalte für jede Seite (wie auf der referenzierten Website, angepasst für Araras)
+    const contentDB = {
+        startseite: {
+            title: "Startseite",
+            body: `
+                <div style="font-size:1.05rem; line-height:1.6; background: #fefaf5; padding:1rem 1.5rem; border-radius: 28px;">
+                    <p>Willkommen auf der Kunstseite von <strong>Araras</strong> – entdecken Sie eine einzigartige Sammlung von Ölmalerei, zarten Aquarellen und ausdrucksstarken Radierungen.</p>
+                    <p style="margin-top:0.8rem">Die Werke zeugen von einer intensiven Auseinandersetzung mit Licht, Farbe und Textur. Lassen Sie sich von der Vielfalt der Motive inspirieren – von feinen Porträts bis hin zu atmosphärischen Landschaften.</p>
+                    <hr>
+                    <p style="font-style:italic; color:#8c6e58;">„Kunst ist die Brücke zwischen sichtbaren und unsichtbaren Welten.“</p>
+                </div>
+                <div class="art-grid" style="margin-top: 2rem;">
+                    <div class="art-card"><div class="placeholder-img">🎨 Öl auf Leinwand</div><h3>Farbklänge</h3><p>Ölmalerei, 2024</p></div>
+                    <div class="art-card"><div class="placeholder-img">💧 Aquarell auf Papier</div><h3>Garten der Stille</h3><p>Aquarell, 2023</p></div>
+                    <div class="art-card"><div class="placeholder-img">🖌️ Radierung</div><h3>Strukturen</h3><p>Radierung, 2022</p></div>
+                </div>
+            `
+        },
+        oelmalerei: {
+            title: "Ölmalerei",
+            body: `
+                <div class="art-grid">
+                    <div class="art-card"><div class="placeholder-img">🖼️ 'Herbstsonate'</div><h3>Herbstsonate</h3><p>Öl/Lw, 100x80cm, 2023</p></div>
+                    <div class="art-card"><div class="placeholder-img">🌄 'Berge im Licht'</div><h3>Berge im Licht</h3><p>Öl auf Leinwand, 2024</p></div>
+                    <div class="art-card"><div class="placeholder-img">🍃 'Flüstern des Waldes'</div><h3>Flüstern des Waldes</h3><p>Ölmalerei, 2022</p></div>
+                    <div class="art-card"><div class="placeholder-img">🎭 'Porträt Einklang'</div><h3>Porträt Einklang</h3><p>Öl, 60x80cm, 2024</p></div>
+                </div>
+                <p style="margin-top:1rem; font-size:0.9rem; background:#fff3e9; padding:0.8rem; border-radius:24px;">Die Ölmalerei von Araras zeichnet sich durch reiche Texturen und tiefe Leuchtkraft aus. Jedes Werk entsteht in mehreren Schichten, um eine besondere atmosphärische Dichte zu erreichen.</p>
+            `
+        },
+        aquarelle: {
+            title: "Aquarelle",
+            body: `
+                <div class="art-grid">
+                    <div class="art-card"><div class="placeholder-img">💧 'Morgennebel'</div><h3>Morgennebel</h3><p>Aquarell, 2023</p></div>
+                    <div class="art-card"><div class="placeholder-img">🌸 'Blütenzauber'</div><h3>Blütenzauber</h3><p>Aquarell auf Aquarellkarton</p></div>
+                    <div class="art-card"><div class="placeholder-img">🌊 'Wellenspiel'</div><h3>Wellenspiel</h3><p>Aquarell, 2024</p></div>
+                </div>
+                <p style="margin-top:1rem">Die Aquarelle bestechen durch ihren fließenden Farbauftrag und die Leichtigkeit des Augenblicks. Inspiriert von der Natur entstehen poetische Kompositionen.</p>
+            `
+        },
+        radierungen: {
+            title: "Radierungen",
+            body: `
+                <div style="background:#fefaf5; padding:1rem; border-radius:24px;">
+                    <p><strong>Radierungen</strong> – feine Strichführung und tiefe Schwarz-Weiß-Kontraste. Die druckgrafischen Arbeiten von Araras zeigen eine besondere Vorliebe für expressive Linien und textile Oberflächen.</p>
+                </div>
+                <div class="art-grid" style="margin-top: 1.5rem;">
+                    <div class="art-card"><div class="placeholder-img">🖨️ 'Metamorphose I'</div><h3>Metamorphose I</h3><p>Radierung, Auflage 15</p></div>
+                    <div class="art-card"><div class="placeholder-img">✨ 'Nachtstück'</div><h3>Nachtstück</h3><p>Kaltnadelradierung, 2023</p></div>
+                </div>
+                <p style="margin-top:0.8rem; font-size:0.85rem;">Geschrieben am 5. März 2024 von der Redaktion</p>
+            `
+        },
+        ausstellungen: {
+            title: "Ausstellungen",
+            body: `
+                <div class="vita-section">
+                    <h3 style="margin-bottom:0.8rem;">📅 Einzel- und Gruppenausstellungen</h3>
+                    <ul class="vita-list">
+                        <li><strong>2024</strong> – Galerie Lichtblick, Frankfurt: „Farbwelten“ (Einzelausstellung)</li>
+                        <li><strong>2023</strong> – Kunstverein Bad Nauheim, Gruppenausstellung „Positionen“</li>
+                        <li><strong>2022</strong> – Ausstellungshalle im Kulturzentrum Friedrichsdorf</li>
+                        <li><strong>2021</strong> – „Junge Kunst im Dialog“ – Wiesbaden</li>
+                        <li><strong>2019–2024</strong> – Zahlreiche weitere Beteiligungen und Kunstmessen</li>
+                    </ul>
+                    <p style="margin-top:1rem;">Seit 2020 regelmäßige Ausstellungen im In- und Ausland. Kontaktieren Sie uns für kommende Termine.</p>
+                </div>
+            `
+        },
+        vita: {
+            title: "Vita",
+            body: `
+                <div class="vita-section">
+                    <ul class="vita-list">
+                        <li>Geboren und aufgewachsen in Allenstein (heute Polen) – künstlerische Prägung durch mitteleuropäische Traditionen.</li>
+                        <li>Studium an der Technischen Universität Danzig – erstes fundiertes künstlerisches Fundament.</li>
+                        <li>Seit mehr als 25 Jahren in Deutschland lebend und arbeitend.</li>
+                    </ul>
+                    <h3 style="margin: 1rem 0 0.5rem;">Studium, Kurse und Seminare</h3>
+                    <ul class="vita-list">
+                        <li>2004–2005: Ölmalereiseminar bei der VHS</li>
+                        <li>2006–2007: Zeichenkurse bei Herrn Franke in Friedrichsdorf</li>
+                        <li>2008–2012: Besuch der Abendschule der Staatlichen Hochschule für Bildende Künste Frankfurt a. M. – Städelschule. Schwerpunkte: Aktzeichnen, Porträtstudium, Maltechnik, Kunstgeschichte. Mittel: Bleistift, Öl, Aquarell, Tusche.</li>
+                        <li>Ab 2013: Freie Kunstakademie Frankfurt – vertiefende Mal- und Grafikstudien</li>
+                    </ul>
+                    <h3 style="margin: 1rem 0 0.5rem;">Mitgliedschaften & Ehrenämter</h3>
+                    <ul class="vita-list">
+                        <li>2008–2018: Mitglied des Kunstkreises Friedrichsdorf</li>
+                        <li>2015–2016: Vorstand des Kunstkreises Friedrichsdorf</li>
+                        <li>Seit 2016: Mitglied im Verein „Die Palette Frankfurt am Main – Internationaler Ring der Kunstfreunde e.V.“</li>
+                        <li>Seit 2023: Vorstand des Vereins „Die Palette“</li>
+                        <li>Mitglied des Kunstvereins Bad Nauheim e.V.</li>
+                    </ul>
+                    <p style="margin-top: 1rem; background:#f2e5da; padding:0.5rem; border-radius: 20px;">Seit 2008 – zahlreiche nationale und internationale Ausstellungen.</p>
+                </div>
+            `
+        },
+        kontakt: {
+            title: "Kontakt",
+            body: `
+                <div class="contact-details">
+                    <h3 style="font-weight: normal;">Araras – Künstlerisches Atelier</h3>
+                    <p style="margin: 0.8rem 0;">E-Mail für Anfragen, Ausstellungsanfragen und Galeriekontakt:</p>
+                    <div class="contact-email">info@araras.de</div>
+                    <p style="margin-top: 1.2rem;">Zofia Kwestorowska-Markowsky (Vertreten durch Araras) <br> 
+                    Postanschrift auf Anfrage.</p>
+                    <hr style="max-width: 200px; margin: 1rem auto;">
+                    <p style="font-size:0.8rem;">Stolz präsentiert als Azure Static Web App · 2025</p>
+                </div>
+            `
+        }
+    };
+
+    // Navigation und dynamischer Seitenumbau
+    const navLinks = document.querySelectorAll('.nav-link');
+    const renderArea = document.getElementById('page-render');
+
+    function setActiveLink(activePageId) {
+        navLinks.forEach(link => {
+            const pageVal = link.getAttribute('data-page');
+            if (pageVal === activePageId) {
+                link.style.background = '#e3d5c8';
+                link.style.fontWeight = '600';
+                link.style.borderRadius = '30px';
+            } else {
+                link.style.background = 'transparent';
+                link.style.fontWeight = 'normal';
+            }
+        });
+    }
+
+    function loadPage(pageId) {
+        const pageData = contentDB[pageId];
+        if (!pageData) return;
+        const titleHtml = `<h2 class="page-title">${pageData.title}</h2>`;
+        const finalHtml = titleHtml + pageData.body;
+        renderArea.innerHTML = finalHtml;
+        setActiveLink(pageId);
+        // Nachladen von eventuellen Platzhaltern CSS bleibt gleich
+    }
+
+    // Event Listener für Navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            if (page) loadPage(page);
+            // kleine History-Änderung: URL anpassen ohne reload
+            window.history.pushState({ page: page }, "", `#${page}`);
+        });
+    });
+
+    // anfängliche Seite via hash oder default startseite
+    function handleInitialPage() {
+        const hash = window.location.hash.substring(1); // entfernt #
+        if (hash && contentDB[hash]) {
+            loadPage(hash);
+        } else {
+            loadPage('startseite');
+        }
+    }
+
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.page) {
+            loadPage(event.state.page);
+        } else {
+            const hashPage = window.location.hash.substring(1);
+            if (hashPage && contentDB[hashPage]) loadPage(hashPage);
+            else loadPage('startseite');
+        }
+    });
+
+    handleInitialPage();
+</script>
+</body>
+</html>
