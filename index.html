@@ -8,38 +8,39 @@
     name="description"
     content="Araras – Kunst aus Leidenschaft. Entdecken Sie Ölmalerei, Aquarelle und Radierungen. Ausstellungen, Vita und Kontakt."
   />
+
   <style>
     :root {
-  --bg-page: #fffbea;
-  --bg-card: #ffffff;
-  --bg-header: #ffdf00;
-  --bg-nav: #009739;
-  --bg-nav-active: #ffdf00;
-  --bg-chip: #ffef75;
-  --bg-soft: #f5fff7;
+      --bg-page: #fffbea;
+      --bg-card: #ffffff;
+      --bg-header: #ffdf00;
+      --bg-nav: #009739;
+      --bg-nav-active: #ffdf00;
+      --bg-chip: #ffef75;
+      --bg-soft: #f5fff7;
 
-  --text-main: #1f2d1f;
-  --text-dark: #003f1f;
-  --text-muted: #174d2c;
-  --text-soft: #2f6540;
+      --text-main: #1f2d1f;
+      --text-dark: #003f1f;
+      --text-muted: #174d2c;
+      --text-soft: #2f6540;
 
-  --accent: #009739;
-  --accent-strong: #006b2d;
-  --accent-line: #ffdf00;
+      --accent: #009739;
+      --accent-strong: #006b2d;
+      --accent-line: #ffdf00;
 
-  --border: #d6e8c8;
-  --border-soft: #f4d000;
+      --border: #d6e8c8;
+      --border-soft: #f4d000;
 
-  --shadow: 0 8px 24px rgba(0, 80, 35, 0.10);
+      --shadow: 0 8px 24px rgba(0, 80, 35, 0.10);
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 24px;
-  --radius-pill: 999px;
-  --container-width: 1200px;
-  --transition: 0.2s ease;
-}
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+      --container-width: 1200px;
+      --transition: 0.2s ease;
+    }
 
     * {
       margin: 0;
@@ -72,22 +73,22 @@
       text-align: center;
       padding: 2.5rem 1rem 1.5rem;
       border-bottom: 1px solid var(--border-soft);
-      background: var(--bg-header);
+      background: linear-gradient(135deg, #ffdf00 0%, #fff4a3 55%, #009739 100%);
     }
 
     .site-title {
       font-size: 2.2rem;
-      font-weight: 400;
+      font-weight: 700;
       letter-spacing: 1px;
-      color: var(--text-dark);
+      color: #003f1f;
       margin-bottom: 0.5rem;
     }
 
     .site-subtitle {
       font-size: 1.08rem;
-      color: var(--text-muted);
+      color: #003f1f;
       font-style: italic;
-      border-top: 1px solid #e0d6ca;
+      border-top: 1px solid rgba(0, 63, 31, 0.35);
       display: inline-block;
       padding-top: 0.6rem;
       margin-top: 0.3rem;
@@ -95,7 +96,7 @@
 
     .nav-menu {
       background: var(--bg-nav);
-      border-bottom: 2px solid #ddd0c0;
+      border-bottom: 2px solid #006b2d;
     }
 
     .nav-links {
@@ -111,8 +112,8 @@
       display: inline-block;
       padding: 0.65rem 1.1rem;
       font-size: 0.98rem;
-      font-weight: 500;
-      color: #4a3b34;
+      font-weight: 600;
+      color: #ffffff;
       text-decoration: none;
       letter-spacing: 0.3px;
       border-radius: var(--radius-pill);
@@ -122,14 +123,14 @@
     .nav-link:hover,
     .nav-link:focus-visible {
       background: var(--bg-nav-active);
-      color: #1f1b18;
+      color: #003f1f;
       outline: none;
     }
 
     .nav-link.active {
       background: var(--bg-nav-active);
-      font-weight: 600;
-      color: #1f1b18;
+      font-weight: 700;
+      color: #003f1f;
     }
 
     .main-content {
@@ -139,11 +140,11 @@
 
     .page-title {
       font-size: 1.9rem;
-      font-weight: 400;
+      font-weight: 700;
       border-left: 5px solid var(--accent-line);
       padding-left: 1rem;
       margin-bottom: 1.8rem;
-      color:#49e048;
+      color: var(--accent-strong);
     }
 
     .intro-box,
@@ -164,14 +165,14 @@
 
     .quote {
       font-style: italic;
-      color: #8c6e58;
+      color: #006b2d;
     }
 
     hr {
       margin: 1rem 0;
       border: none;
       height: 1px;
-      background: linear-gradient(to right, #e3d5c8, transparent);
+      background: linear-gradient(to right, #ffdf00, transparent);
     }
 
     .art-grid {
@@ -194,7 +195,7 @@
 
     .art-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 20px rgba(0, 80, 35, 0.12);
     }
 
     .placeholder-img {
@@ -206,18 +207,17 @@
       justify-content: center;
       border-radius: var(--radius-sm);
       font-size: 0.92rem;
-      color: #8c7766;
+      color: #003f1f;
       font-family: monospace;
-      background: #e7ddd2;
-      background-image: radial-gradient(circle at 10% 30%, rgba(160, 120, 90, 0.08) 2%, transparent 2.5%);
-      background-size: 20px 20px;
+      background: linear-gradient(135deg, #fff4a3 0%, #ffdf00 50%, #dff7df 100%);
+      border: 1px solid #e6cc00;
       text-align: center;
       padding: 0.5rem;
     }
 
     .art-card h3 {
       margin: 1rem 0 0.35rem;
-      font-weight: 500;
+      font-weight: 700;
       font-size: 1.15rem;
       color: var(--accent-strong);
     }
@@ -247,7 +247,7 @@
 
     .vita-list li::before {
       content: "•";
-      color: var(--accent-line);
+      color: var(--accent);
       font-weight: bold;
       font-size: 1.2rem;
       position: absolute;
@@ -278,7 +278,8 @@
     .small-note {
       margin-top: 0.8rem;
       font-size: 0.88rem;
-      background: #fff3e9;
+      background: #f5fff7;
+      border: 1px solid var(--border);
       padding: 0.8rem 1rem;
       border-radius: 24px;
     }
@@ -286,7 +287,7 @@
     .meta-note {
       margin-top: 0.8rem;
       font-size: 0.85rem;
-      color: #6f5a4a;
+      color: #2f6540;
     }
 
     a {
@@ -303,14 +304,14 @@
       text-align: center;
       padding: 1.5rem;
       font-size: 0.78rem;
-      color: #8a786a;
-      border-top: 1px solid #e3d5c8;
+      color: #ffffff;
+      border-top: 1px solid #006b2d;
     }
 
     .no-js-message {
       margin-top: 1rem;
       font-size: 0.95rem;
-      color: #6b5a4e;
+      color: #174d2c;
     }
 
     @media (max-width: 680px) {
@@ -357,6 +358,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header class="site-header">
@@ -387,7 +389,7 @@
     </main>
 
     <footer>
-      <p>© 2025 Araras – Alle Rechte vorbehalten. | Präsentiert als Azure Static Web App | Theme inspiriert von der Kunstwelt</p>
+      <p>© 2026 Araras – Alle Rechte vorbehalten. | Präsentiert als Azure Static Web App | Theme inspiriert von brasilianischen Farben</p>
       <p style="margin-top: 0.3rem;">STOLZ PRÄSENTIERT MIT STATIC HOSTING · AZURE STATIC WEB APPS</p>
     </footer>
   </div>
@@ -408,17 +410,17 @@
             <article class="art-card">
               <div class="placeholder-img">🎨 Öl auf Leinwand</div>
               <h3>Farbklänge</h3>
-              <p>Ölmalerei, 2024</p>
+              <p>Ölmalerei, 2026</p>
             </article>
             <article class="art-card">
               <div class="placeholder-img">💧 Aquarell auf Papier</div>
               <h3>Garten der Stille</h3>
-              <p>Aquarell, 2023</p>
+              <p>Aquarell, 2026</p>
             </article>
             <article class="art-card">
               <div class="placeholder-img">🖌️ Radierung</div>
               <h3>Strukturen</h3>
-              <p>Radierung, 2022</p>
+              <p>Radierung, 2026</p>
             </article>
           </div>
         `
@@ -431,22 +433,22 @@
             <article class="art-card">
               <div class="placeholder-img">🖼️ „Herbstsonate“</div>
               <h3>Herbstsonate</h3>
-              <p>Öl/Lw, 100 × 80 cm, 2023</p>
+              <p>Öl/Lw, 100 × 80 cm, 2026</p>
             </article>
             <article class="art-card">
               <div class="placeholder-img">🌄 „Berge im Licht“</div>
               <h3>Berge im Licht</h3>
-              <p>Öl auf Leinwand, 2024</p>
+              <p>Öl auf Leinwand, 2026</p>
             </article>
             <article class="art-card">
               <div class="placeholder-img">🍃 „Flüstern des Waldes“</div>
               <h3>Flüstern des Waldes</h3>
-              <p>Ölmalerei, 2022</p>
+              <p>Ölmalerei, 2026</p>
             </article>
             <article class="art-card">
               <div class="placeholder-img">🎭 „Porträt Einklang“</div>
               <h3>Porträt Einklang</h3>
-              <p>Öl, 60 × 80 cm, 2024</p>
+              <p>Öl, 60 × 80 cm, 2026</p>
             </article>
           </div>
 
@@ -463,7 +465,7 @@
             <article class="art-card">
               <div class="placeholder-img">💧 „Morgennebel“</div>
               <h3>Morgennebel</h3>
-              <p>Aquarell, 2023</p>
+              <p>Aquarell, 2026</p>
             </article>
             <article class="art-card">
               <div class="placeholder-img">🌸 „Blütenzauber“</div>
@@ -473,7 +475,7 @@
             <article class="art-card">
               <div class="placeholder-img">🌊 „Wellenspiel“</div>
               <h3>Wellenspiel</h3>
-              <p>Aquarell, 2024</p>
+              <p>Aquarell, 2026</p>
             </article>
           </div>
 
@@ -499,11 +501,11 @@
             <article class="art-card">
               <div class="placeholder-img">✨ „Nachtstück“</div>
               <h3>Nachtstück</h3>
-              <p>Kaltnadelradierung, 2023</p>
+              <p>Kaltnadelradierung, 2026</p>
             </article>
           </div>
 
-          <p class="meta-note">Geschrieben am 5. März 2024 von der Redaktion</p>
+          <p class="meta-note">Geschrieben am 5. März 2026 von der Redaktion</p>
         `
       },
 
@@ -513,13 +515,13 @@
           <div class="vita-section">
             <h3 style="margin-bottom: 0.8rem;">📅 Einzel- und Gruppenausstellungen</h3>
             <ul class="vita-list">
-              <li><strong>2024</strong> – Galerie Lichtblick, Frankfurt: „Farbwelten“ (Einzelausstellung)</li>
-              <li><strong>2023</strong> – Kunstverein Bad Nauheim, Gruppenausstellung „Positionen“</li>
-              <li><strong>2022</strong> – Ausstellungshalle im Kulturzentrum Friedrichsdorf</li>
-              <li><strong>2021</strong> – „Junge Kunst im Dialog“ – Wiesbaden</li>
-              <li><strong>2019–2024</strong> – Zahlreiche weitere Beteiligungen und Kunstmessen</li>
+              <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: „Farbwelten“ (Einzelausstellung)</li>
+              <li><strong>2026</strong> – Kunstverein Bad Nauheim, Gruppenausstellung „Positionen“</li>
+              <li><strong>2026</strong> – Ausstellungshalle im Kulturzentrum Friedrichsdorf</li>
+              <li><strong>2026</strong> – „Junge Kunst im Dialog“ – Wiesbaden</li>
+              <li><strong>2026</strong> – Weitere Beteiligungen und Kunstmessen</li>
             </ul>
-            <p style="margin-top: 1rem;">Seit 2020 regelmäßige Ausstellungen im In- und Ausland. Kontaktieren Sie uns für kommende Termine.</p>
+            <p style="margin-top: 1rem;">Seit 2026 regelmäßige Ausstellungen im In- und Ausland. Kontaktieren Sie uns für kommende Termine.</p>
           </div>
         `
       },
@@ -551,7 +553,7 @@
               <li>Mitglied des Kunstvereins Bad Nauheim e.V.</li>
             </ul>
 
-            <p style="margin-top: 1rem; background: #f2e5da; padding: 0.6rem 0.8rem; border-radius: 20px;">
+            <p style="margin-top: 1rem; background: #f5fff7; border: 1px solid #d6e8c8; padding: 0.6rem 0.8rem; border-radius: 20px;">
               Seit 2008 – zahlreiche nationale und internationale Ausstellungen.
             </p>
           </div>
@@ -562,17 +564,17 @@
         title: "Kontakt",
         body: `
           <div class="contact-details">
-            <h3 style="font-weight: 400;">Araras – Künstlerisches Atelier</h3>
+            <h3 style="font-weight: 700;">Araras – Künstlerisches Atelier</h3>
             <p>E-Mail für Anfragen, Ausstellungsanfragen und Galeriekontakt:</p>
             <div class="contact-email">
               <a href="mailto:info@araras.de">info@araras.de</a>
             </div>
             <p style="margin-top: 1.2rem;">
-              Zofia Kwestorowska-Markowsky (Vertreten durch Araras)<br>
+              Araras<br>
               Postanschrift auf Anfrage.
             </p>
             <hr style="max-width: 220px; margin: 1rem auto;">
-            <p style="font-size: 0.82rem;">Stolz präsentiert als Azure Static Web App · 2025</p>
+            <p style="font-size: 0.82rem;">Stolz präsentiert als Azure Static Web App · 2026</p>
           </div>
         `
       }
@@ -624,8 +626,11 @@
     navLinks.forEach(link => {
       link.addEventListener("click", event => {
         event.preventDefault();
+
         const pageId = sanitizePageId(link.dataset.page);
-        if (window.location.hash.replace("#", "") !== pageId) {
+        const currentHash = window.location.hash.replace("#", "");
+
+        if (currentHash !== pageId) {
           window.location.hash = pageId;
         } else {
           renderPage(pageId);
