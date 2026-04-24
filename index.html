@@ -1,855 +1,214 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Araras – Ölmalerei, Aquarelle, Radierungen</title>
-  <meta name="description" content="Araras – Kunst aus Leidenschaft. Oil painting, watercolors, etchings. Pintura a óleo, aquarelas e gravuras." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Araras</title>
 
-  <style>
-    :root {
-      --bg-page: #fffbea;
-      --bg-card: #ffffff;
-      --bg-header: #ffdf00;
-      --bg-nav: #009739;
-      --bg-nav-active: #ffdf00;
-      --bg-chip: #ffef75;
-      --bg-soft: #f5fff7;
-      --text-main: #1f2d1f;
-      --text-dark: #003f1f;
-      --text-muted: #174d2c;
-      --text-soft: #2f6540;
-      --accent: #009739;
-      --accent-strong: #006b2d;
-      --accent-line: #ffdf00;
-      --border: #d6e8c8;
-      --border-soft: #f4d000;
-      --shadow: 0 8px 24px rgba(0, 80, 35, 0.10);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
-      --radius-xl: 24px;
-      --radius-pill: 999px;
-      --container-width: 1200px;
-      --transition: 0.2s ease;
-    }
+<style>
+:root {
+  --yellow: #ffdf00;
+  --green: #009739;
+  --dark: #003f1f;
+  --bg: #fffbea;
+}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  margin:0;
+  font-family: Georgia, serif;
+  background: var(--bg);
+}
 
-    html { scroll-behavior: smooth; }
+.container {
+  max-width:1200px;
+  margin:auto;
+  background:#fff;
+}
 
-    body {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      background: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
+/* HEADER */
+.site-header {
+  position:relative;
+  padding:2rem;
+  background: linear-gradient(135deg, #ffdf00, #009739);
+  color: var(--dark);
+}
 
-    .container {
-      max-width: var(--container-width);
-      margin: 0 auto;
-      background: #fff;
-      box-shadow: var(--shadow);
-      border-radius: 4px;
-      overflow: hidden;
-    }
+.site-title {
+  font-size:2.5rem;
+  font-weight:bold;
+}
 
-    .site-header {
-      text-align: center;
-      padding: 2.5rem 1rem 1.5rem;
-      border-bottom: 1px solid var(--border-soft);
-      background: linear-gradient(135deg, #ffdf00 0%, #fff4a3 55%, #009739 100%);
-    }
+.site-subtitle {
+  margin-top:10px;
+  font-style:italic;
+}
 
-    .site-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #003f1f;
-      margin-bottom: 0.5rem;
-    }
+/* FLAGS */
+.language-switcher {
+  position:absolute;
+  top:15px;
+  right:20px;
+  display:flex;
+  gap:10px;
+}
 
-    .site-subtitle {
-      font-size: 1.08rem;
-      color: #003f1f;
-      font-style: italic;
-      border-top: 1px solid rgba(0, 63, 31, 0.35);
-      display: inline-block;
-      padding-top: 0.6rem;
-      margin-top: 0.3rem;
-    }
+.language-switcher button {
+  width:45px;
+  height:32px;
+  font-size:18px;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+  background:#fff;
+}
 
-    .language-switcher {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+.language-switcher button.active {
+  border:2px solid black;
+}
 
-    .language-switcher button {
-      border: 1px solid #006b2d;
-      background: #ffffff;
-      color: #003f1f;
-      padding: 0.45rem 0.9rem;
-      border-radius: var(--radius-pill);
-      cursor: pointer;
-      font-weight: 700;
-      font-family: inherit;
-    }
+/* NAV */
+.nav-menu {
+  background: var(--green);
+  text-align:center;
+}
 
-    .language-switcher button.active-lang {
-      background: #009739;
-      color: #ffffff;
-    }
+.nav-menu a {
+  color:white;
+  padding:12px;
+  display:inline-block;
+  text-decoration:none;
+}
 
-    .nav-menu {
-      background: var(--bg-nav);
-      border-bottom: 2px solid #006b2d;
-    }
+.nav-menu a:hover {
+  background: var(--yellow);
+  color:black;
+}
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.3rem;
-      list-style: none;
-      padding: 0.75rem 1rem;
-    }
+/* CONTENT */
+.main-content {
+  padding:20px;
+}
 
-    .nav-link {
-      display: inline-block;
-      padding: 0.65rem 1.1rem;
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: 0.3px;
-      border-radius: var(--radius-pill);
-      transition: background var(--transition), color var(--transition);
-    }
+/* GRID */
+.art-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    .nav-link:hover,
-    .nav-link:focus-visible,
-    .nav-link.active {
-      background: var(--bg-nav-active);
-      color: #003f1f;
-      outline: none;
-      font-weight: 700;
-      text-decoration: none;
-    }
+.art-card {
+  border:1px solid #ddd;
+  padding:10px;
+  text-align:center;
+}
 
-    .main-content {
-      padding: 2rem 2rem 2.5rem;
-      min-height: 520px;
-    }
+.placeholder {
+  height:150px;
+  background:#eee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .page-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      border-left: 5px solid var(--accent-line);
-      padding-left: 1rem;
-      margin-bottom: 1.8rem;
-      color: var(--accent-strong);
-    }
-
-    .intro-box,
-    .info-box,
-    .vita-section,
-    .contact-details {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 1rem 1.5rem;
-    }
-
-    .intro-box p + p,
-    .info-box p + p,
-    .contact-details p + p {
-      margin-top: 0.8rem;
-    }
-
-    .quote {
-      font-style: italic;
-      color: #006b2d;
-    }
-
-    hr {
-      margin: 1rem 0;
-      border: none;
-      height: 1px;
-      background: linear-gradient(to right, #ffdf00, transparent);
-    }
-
-    .art-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .art-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      text-align: center;
-      padding: 1rem 0.6rem 1rem;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .art-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 20px rgba(0, 80, 35, 0.12);
-    }
-
-    .placeholder-img {
-      width: 90%;
-      height: 200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius-sm);
-      font-size: 0.92rem;
-      color: #003f1f;
-      font-family: monospace;
-      background: linear-gradient(135deg, #fff4a3 0%, #ffdf00 50%, #dff7df 100%);
-      border: 1px solid #e6cc00;
-      text-align: center;
-      padding: 0.5rem;
-    }
-
-    .art-card h3 {
-      margin: 1rem 0 0.35rem;
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--accent-strong);
-    }
-
-    .art-card p {
-      font-size: 0.88rem;
-      color: var(--text-soft);
-      padding: 0 0.7rem 0.4rem;
-    }
-
-    .vita-section {
-      border-radius: var(--radius-lg);
-      margin-top: 1rem;
-      padding: 1.2rem 1.6rem;
-    }
-
-    .vita-list {
-      list-style: none;
-      margin-top: 0.8rem;
-    }
-
-    .vita-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .vita-list li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.2rem;
-      position: absolute;
-      left: 0;
-      top: -1px;
-    }
-
-    .contact-details {
-      background: var(--bg-soft);
-      border-radius: var(--radius-xl);
-      text-align: center;
-      font-size: 1.1rem;
-      padding: 1.5rem;
-    }
-
-    .contact-email {
-      font-size: 1.25rem;
-      word-break: break-word;
-      background: var(--bg-chip);
-      display: inline-block;
-      padding: 0.55rem 1.2rem;
-      border-radius: var(--radius-pill);
-      margin-top: 0.8rem;
-      font-family: monospace;
-      letter-spacing: 0.4px;
-    }
-
-    .small-note {
-      margin-top: 0.8rem;
-      font-size: 0.88rem;
-      background: #f5fff7;
-      border: 1px solid var(--border);
-      padding: 0.8rem 1rem;
-      border-radius: 24px;
-    }
-
-    .meta-note {
-      margin-top: 0.8rem;
-      font-size: 0.85rem;
-      color: #2f6540;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    footer {
-      background: var(--bg-nav);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.78rem;
-      color: #ffffff;
-      border-top: 1px solid #006b2d;
-    }
-
-    .no-js-message {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      color: #174d2c;
-    }
-
-    @media (max-width: 680px) {
-      body { padding: 1rem 0.5rem; }
-      .site-title { font-size: 1.8rem; }
-      .site-subtitle { font-size: 0.98rem; }
-      .main-content { padding: 1.4rem 1rem 2rem; min-height: auto; }
-      .page-title { font-size: 1.55rem; }
-      .nav-link { padding: 0.5rem 0.85rem; font-size: 0.88rem; }
-      .placeholder-img { height: 180px; }
-      .contact-email { font-size: 1rem; }
-      .intro-box, .info-box, .vita-section, .contact-details { padding: 1rem; }
-    }
-  </style>
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:15px;
+  background: var(--green);
+  color:white;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <header class="site-header">
-      <h1 class="site-title">Araras</h1>
-      <div class="site-subtitle" id="site-subtitle">Ölmalerei · Aquarelle · Radierungen</div>
 
-      <div class="language-switcher" aria-label="Sprachauswahl">
-        <button type="button" data-lang="de" class="active-lang">DE</button>
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="pt">PT-BR</button>
-      </div>
-    </header>
+<div class="container">
 
-    <nav class="nav-menu" aria-label="Hauptnavigation">
-      <ul class="nav-links">
-        <li><a href="#startseite" data-page="startseite" class="nav-link">Startseite</a></li>
-        <li><a href="#oelmalerei" data-page="oelmalerei" class="nav-link">Ölmalerei</a></li>
-        <li><a href="#aquarelle" data-page="aquarelle" class="nav-link">Aquarelle</a></li>
-        <li><a href="#radierungen" data-page="radierungen" class="nav-link">Radierungen</a></li>
-        <li><a href="#ausstellungen" data-page="ausstellungen" class="nav-link">Ausstellungen</a></li>
-        <li><a href="#vita" data-page="vita" class="nav-link">Vita</a></li>
-        <li><a href="#kontakt" data-page="kontakt" class="nav-link">Kontakt</a></li>
-      </ul>
-    </nav>
+<header class="site-header">
 
-    <main class="main-content">
-      <section id="page-render" aria-live="polite"></section>
+<div class="language-switcher">
+<button data-lang="de" class="active">🇩🇪</button>
+<button data-lang="en">🇬🇧</button>
+<button data-lang="pt">🇧🇷</button>
+</div>
 
-      <noscript>
-        <div class="no-js-message">
-          JavaScript ist deaktiviert. Bitte aktivieren Sie JavaScript, um die Navigation der Seiteninhalte zu nutzen.
-        </div>
-      </noscript>
-    </main>
+<h1 class="site-title">Araras</h1>
+<div class="site-subtitle" id="subtitle"></div>
 
-    <footer>
-      <p id="footer-main">© 2026 Araras – Alle Rechte vorbehalten. | Präsentiert als Azure Static Web App | Theme inspiriert von brasilianischen Farben</p>
-      <p id="footer-sub" style="margin-top: 0.3rem;">STOLZ PRÄSENTIERT MIT STATIC HOSTING · AZURE STATIC WEB APPS</p>
-    </footer>
-  </div>
+</header>
 
-  <script>
-    const translations = {
-      de: {
-        htmlLang: "de",
-        titlePrefix: "Araras",
-        subtitle: "Ölmalerei · Aquarelle · Radierungen",
-        nav: {
-          startseite: "Startseite",
-          oelmalerei: "Ölmalerei",
-          aquarelle: "Aquarelle",
-          radierungen: "Radierungen",
-          ausstellungen: "Ausstellungen",
-          vita: "Vita",
-          kontakt: "Kontakt"
-        },
-        footerMain: "© 2026 Araras – Alle Rechte vorbehalten. | Präsentiert als Azure Static Web App | Theme inspiriert von brasilianischen Farben",
-        footerSub: "STOLZ PRÄSENTIERT MIT STATIC HOSTING · AZURE STATIC WEB APPS",
-        pages: {
-          startseite: {
-            title: "Startseite",
-            body: `
-              <div class="intro-box">
-                <p>Willkommen auf der Kunstseite von <strong>Araras</strong> – entdecken Sie eine einzigartige Sammlung von Ölmalerei, zarten Aquarellen und ausdrucksstarken Radierungen.</p>
-                <p>Die Werke zeugen von einer intensiven Auseinandersetzung mit Licht, Farbe und Textur. Lassen Sie sich von der Vielfalt der Motive inspirieren – von feinen Porträts bis hin zu atmosphärischen Landschaften.</p>
-                <hr>
-                <p class="quote">„Kunst ist die Brücke zwischen sichtbaren und unsichtbaren Welten.“</p>
-              </div>
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🎨 Öl auf Leinwand</div><h3>Farbklänge</h3><p>Ölmalerei, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">💧 Aquarell auf Papier</div><h3>Garten der Stille</h3><p>Aquarell, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🖌️ Radierung</div><h3>Strukturen</h3><p>Radierung, 2026</p></article>
-              </div>
-            `
-          },
-          oelmalerei: {
-            title: "Ölmalerei",
-            body: `
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🖼️ „Herbstsonate“</div><h3>Herbstsonate</h3><p>Öl/Lw, 100 × 80 cm, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🌄 „Berge im Licht“</div><h3>Berge im Licht</h3><p>Öl auf Leinwand, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🍃 „Flüstern des Waldes“</div><h3>Flüstern des Waldes</h3><p>Ölmalerei, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🎭 „Porträt Einklang“</div><h3>Porträt Einklang</h3><p>Öl, 60 × 80 cm, 2026</p></article>
-              </div>
-              <div class="small-note">Die Ölmalerei von Araras zeichnet sich durch reiche Texturen und tiefe Leuchtkraft aus. Jedes Werk entsteht in mehreren Schichten, um eine besondere atmosphärische Dichte zu erreichen.</div>
-            `
-          },
-          aquarelle: {
-            title: "Aquarelle",
-            body: `
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">💧 „Morgennebel“</div><h3>Morgennebel</h3><p>Aquarell, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🌸 „Blütenzauber“</div><h3>Blütenzauber</h3><p>Aquarell auf Aquarellkarton</p></article>
-                <article class="art-card"><div class="placeholder-img">🌊 „Wellenspiel“</div><h3>Wellenspiel</h3><p>Aquarell, 2026</p></article>
-              </div>
-              <div class="info-box"><p>Die Aquarelle bestechen durch ihren fließenden Farbauftrag und die Leichtigkeit des Augenblicks. Inspiriert von der Natur entstehen poetische Kompositionen.</p></div>
-            `
-          },
-          radierungen: {
-            title: "Radierungen",
-            body: `
-              <div class="info-box"><p><strong>Radierungen</strong> – feine Strichführung und tiefe Schwarz-Weiß-Kontraste. Die druckgrafischen Arbeiten von Araras zeigen eine besondere Vorliebe für expressive Linien und textile Oberflächen.</p></div>
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🖨️ „Metamorphose I“</div><h3>Metamorphose I</h3><p>Radierung, Auflage 15</p></article>
-                <article class="art-card"><div class="placeholder-img">✨ „Nachtstück“</div><h3>Nachtstück</h3><p>Kaltnadelradierung, 2026</p></article>
-              </div>
-              <p class="meta-note">Geschrieben am 5. März 2026 von der Redaktion</p>
-            `
-          },
-          ausstellungen: {
-            title: "Ausstellungen",
-            body: `
-              <div class="vita-section">
-                <h3 style="margin-bottom: 0.8rem;">📅 Einzel- und Gruppenausstellungen</h3>
-                <ul class="vita-list">
-                  <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: „Farbwelten“ (Einzelausstellung)</li>
-                  <li><strong>2026</strong> – Kunstverein Bad Nauheim, Gruppenausstellung „Positionen“</li>
-                  <li><strong>2026</strong> – Ausstellungshalle im Kulturzentrum Friedrichsdorf</li>
-                  <li><strong>2026</strong> – „Junge Kunst im Dialog“ – Wiesbaden</li>
-                  <li><strong>2026</strong> – Weitere Beteiligungen und Kunstmessen</li>
-                </ul>
-                <p style="margin-top: 1rem;">Seit 2026 regelmäßige Ausstellungen im In- und Ausland. Kontaktieren Sie uns für kommende Termine.</p>
-              </div>
-            `
-          },
-          vita: {
-            title: "Vita",
-            body: `
-              <div class="vita-section">
-                <ul class="vita-list">
-                  <li>Geboren und aufgewachsen in Allenstein (heute Polen) – künstlerische Prägung durch mitteleuropäische Traditionen.</li>
-                  <li>Studium an der Technischen Universität Danzig – erstes fundiertes künstlerisches Fundament.</li>
-                  <li>Seit mehr als 25 Jahren in Deutschland lebend und arbeitend.</li>
-                </ul>
-                <h3 style="margin: 1rem 0 0.5rem;">Studium, Kurse und Seminare</h3>
-                <ul class="vita-list">
-                  <li>2004–2005: Ölmalereiseminar bei der VHS</li>
-                  <li>2006–2007: Zeichenkurse bei Herrn Franke in Friedrichsdorf</li>
-                  <li>2008–2012: Besuch der Abendschule der Staatlichen Hochschule für Bildende Künste Frankfurt a. M. – Städelschule. Schwerpunkte: Aktzeichnen, Porträtstudium, Maltechnik, Kunstgeschichte. Mittel: Bleistift, Öl, Aquarell, Tusche.</li>
-                  <li>Ab 2013: Freie Kunstakademie Frankfurt – vertiefende Mal- und Grafikstudien</li>
-                </ul>
-                <h3 style="margin: 1rem 0 0.5rem;">Mitgliedschaften & Ehrenämter</h3>
-                <ul class="vita-list">
-                  <li>2008–2018: Mitglied des Kunstkreises Friedrichsdorf</li>
-                  <li>2015–2016: Vorstand des Kunstkreises Friedrichsdorf</li>
-                  <li>Seit 2016: Mitglied im Verein „Die Palette Frankfurt am Main – Internationaler Ring der Kunstfreunde e.V.“</li>
-                  <li>Seit 2023: Vorstand des Vereins „Die Palette“</li>
-                  <li>Mitglied des Kunstvereins Bad Nauheim e.V.</li>
-                </ul>
-                <p style="margin-top: 1rem; background: #f5fff7; border: 1px solid #d6e8c8; padding: 0.6rem 0.8rem; border-radius: 20px;">Seit 2008 – zahlreiche nationale und internationale Ausstellungen.</p>
-              </div>
-            `
-          },
-          kontakt: {
-            title: "Kontakt",
-            body: `
-              <div class="contact-details">
-                <h3 style="font-weight: 700;">Araras – Künstlerisches Atelier</h3>
-                <p>E-Mail für Anfragen, Ausstellungsanfragen und Galeriekontakt:</p>
-                <div class="contact-email"><a href="mailto:info@araras.de">info@araras.de</a></div>
-                <p style="margin-top: 1.2rem;">Araras<br>Postanschrift auf Anfrage.</p>
-                <hr style="max-width: 220px; margin: 1rem auto;">
-                <p style="font-size: 0.82rem;">Stolz präsentiert als Azure Static Web App · 2026</p>
-              </div>
-            `
-          }
-        }
-      },
+<nav class="nav-menu">
+<a href="#" onclick="loadPage('start')">Home</a>
+<a href="#" onclick="loadPage('oil')">Öl</a>
+<a href="#" onclick="loadPage('water')">Aquarell</a>
+<a href="#" onclick="loadPage('contact')">Kontakt</a>
+</nav>
 
-      en: {
-        htmlLang: "en",
-        titlePrefix: "Araras",
-        subtitle: "Oil Painting · Watercolors · Etchings",
-        nav: {
-          startseite: "Home",
-          oelmalerei: "Oil Painting",
-          aquarelle: "Watercolors",
-          radierungen: "Etchings",
-          ausstellungen: "Exhibitions",
-          vita: "Biography",
-          kontakt: "Contact"
-        },
-        footerMain: "© 2026 Araras – All rights reserved. | Presented as an Azure Static Web App | Theme inspired by Brazilian colors",
-        footerSub: "PROUDLY PRESENTED WITH STATIC HOSTING · AZURE STATIC WEB APPS",
-        pages: {
-          startseite: {
-            title: "Home",
-            body: `
-              <div class="intro-box">
-                <p>Welcome to the art page of <strong>Araras</strong> – discover a distinctive collection of oil paintings, delicate watercolors, and expressive etchings.</p>
-                <p>The works reflect a deep engagement with light, color, and texture. Explore a variety of motifs, from refined portraits to atmospheric landscapes.</p>
-                <hr>
-                <p class="quote">“Art is the bridge between visible and invisible worlds.”</p>
-              </div>
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🎨 Oil on Canvas</div><h3>Color Chords</h3><p>Oil painting, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">💧 Watercolor on Paper</div><h3>Garden of Silence</h3><p>Watercolor, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🖌️ Etching</div><h3>Structures</h3><p>Etching, 2026</p></article>
-              </div>
-            `
-          },
-          oelmalerei: {
-            title: "Oil Painting",
-            body: `
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🖼️ “Autumn Sonata”</div><h3>Autumn Sonata</h3><p>Oil/canvas, 100 × 80 cm, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🌄 “Mountains in Light”</div><h3>Mountains in Light</h3><p>Oil on canvas, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🍃 “Whisper of the Forest”</div><h3>Whisper of the Forest</h3><p>Oil painting, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🎭 “Portrait Harmony”</div><h3>Portrait Harmony</h3><p>Oil, 60 × 80 cm, 2026</p></article>
-              </div>
-              <div class="small-note">The oil paintings of Araras are characterized by rich textures and deep luminosity. Each work is created in multiple layers to achieve a distinctive atmospheric depth.</div>
-            `
-          },
-          aquarelle: {
-            title: "Watercolors",
-            body: `
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">💧 “Morning Mist”</div><h3>Morning Mist</h3><p>Watercolor, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🌸 “Blossom Magic”</div><h3>Blossom Magic</h3><p>Watercolor on watercolor board</p></article>
-                <article class="art-card"><div class="placeholder-img">🌊 “Play of Waves”</div><h3>Play of Waves</h3><p>Watercolor, 2026</p></article>
-              </div>
-              <div class="info-box"><p>The watercolors stand out through fluid color application and a sense of lightness. Inspired by nature, they create poetic compositions.</p></div>
-            `
-          },
-          radierungen: {
-            title: "Etchings",
-            body: `
-              <div class="info-box"><p><strong>Etchings</strong> – fine line work and strong black-and-white contrasts. The print works of Araras show a special affinity for expressive lines and textured surfaces.</p></div>
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🖨️ “Metamorphosis I”</div><h3>Metamorphosis I</h3><p>Etching, edition of 15</p></article>
-                <article class="art-card"><div class="placeholder-img">✨ “Nocturne”</div><h3>Nocturne</h3><p>Drypoint etching, 2026</p></article>
-              </div>
-              <p class="meta-note">Written on March 5, 2026 by the editorial team</p>
-            `
-          },
-          ausstellungen: {
-            title: "Exhibitions",
-            body: `
-              <div class="vita-section">
-                <h3 style="margin-bottom: 0.8rem;">📅 Solo and Group Exhibitions</h3>
-                <ul class="vita-list">
-                  <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: “Color Worlds” (solo exhibition)</li>
-                  <li><strong>2026</strong> – Kunstverein Bad Nauheim, group exhibition “Positions”</li>
-                  <li><strong>2026</strong> – Exhibition hall at the Friedrichsdorf Cultural Center</li>
-                  <li><strong>2026</strong> – “Young Art in Dialogue” – Wiesbaden</li>
-                  <li><strong>2026</strong> – Further participations and art fairs</li>
-                </ul>
-                <p style="margin-top: 1rem;">Regular exhibitions in Germany and abroad since 2026. Contact us for upcoming dates.</p>
-              </div>
-            `
-          },
-          vita: {
-            title: "Biography",
-            body: `
-              <div class="vita-section">
-                <ul class="vita-list">
-                  <li>Born and raised in Allenstein, now Poland – artistically shaped by Central European traditions.</li>
-                  <li>Studied at Gdańsk University of Technology – first solid artistic foundation.</li>
-                  <li>Living and working in Germany for more than 25 years.</li>
-                </ul>
-                <h3 style="margin: 1rem 0 0.5rem;">Studies, Courses and Seminars</h3>
-                <ul class="vita-list">
-                  <li>2004–2005: Oil painting seminar at VHS</li>
-                  <li>2006–2007: Drawing courses with Mr. Franke in Friedrichsdorf</li>
-                  <li>2008–2012: Evening school at the Städelschule, Frankfurt am Main. Focus areas: life drawing, portrait studies, painting technique, art history. Media: pencil, oil, watercolor, ink.</li>
-                  <li>From 2013: Free Art Academy Frankfurt – advanced painting and graphic studies</li>
-                </ul>
-                <h3 style="margin: 1rem 0 0.5rem;">Memberships and Voluntary Work</h3>
-                <ul class="vita-list">
-                  <li>2008–2018: Member of Kunstkreis Friedrichsdorf</li>
-                  <li>2015–2016: Board member of Kunstkreis Friedrichsdorf</li>
-                  <li>Since 2016: Member of “Die Palette Frankfurt am Main – International Ring of Art Friends e.V.”</li>
-                  <li>Since 2023: Board member of “Die Palette”</li>
-                  <li>Member of Kunstverein Bad Nauheim e.V.</li>
-                </ul>
-                <p style="margin-top: 1rem; background: #f5fff7; border: 1px solid #d6e8c8; padding: 0.6rem 0.8rem; border-radius: 20px;">Since 2008 – numerous national and international exhibitions.</p>
-              </div>
-            `
-          },
-          kontakt: {
-            title: "Contact",
-            body: `
-              <div class="contact-details">
-                <h3 style="font-weight: 700;">Araras – Artistic Studio</h3>
-                <p>Email for inquiries, exhibition requests, and gallery contact:</p>
-                <div class="contact-email"><a href="mailto:info@araras.de">info@araras.de</a></div>
-                <p style="margin-top: 1.2rem;">Araras<br>Postal address available on request.</p>
-                <hr style="max-width: 220px; margin: 1rem auto;">
-                <p style="font-size: 0.82rem;">Proudly presented as an Azure Static Web App · 2026</p>
-              </div>
-            `
-          }
-        }
-      },
+<main class="main-content" id="content"></main>
 
-      pt: {
-        htmlLang: "pt-BR",
-        titlePrefix: "Araras",
-        subtitle: "Pintura a óleo · Aquarelas · Gravuras",
-        nav: {
-          startseite: "Início",
-          oelmalerei: "Pintura a óleo",
-          aquarelle: "Aquarelas",
-          radierungen: "Gravuras",
-          ausstellungen: "Exposições",
-          vita: "Biografia",
-          kontakt: "Contato"
-        },
-        footerMain: "© 2026 Araras – Todos os direitos reservados. | Apresentado como Azure Static Web App | Tema inspirado nas cores brasileiras",
-        footerSub: "ORGULHOSAMENTE APRESENTADO COM STATIC HOSTING · AZURE STATIC WEB APPS",
-        pages: {
-          startseite: {
-            title: "Início",
-            body: `
-              <div class="intro-box">
-                <p>Bem-vindo à página de arte da <strong>Araras</strong> – descubra uma coleção única de pinturas a óleo, aquarelas delicadas e gravuras expressivas.</p>
-                <p>As obras revelam uma intensa relação com luz, cor e textura. Inspire-se pela diversidade dos motivos, de retratos refinados a paisagens atmosféricas.</p>
-                <hr>
-                <p class="quote">“A arte é a ponte entre mundos visíveis e invisíveis.”</p>
-              </div>
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🎨 Óleo sobre tela</div><h3>Acordes de Cor</h3><p>Pintura a óleo, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">💧 Aquarela sobre papel</div><h3>Jardim do Silêncio</h3><p>Aquarela, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🖌️ Gravura</div><h3>Estruturas</h3><p>Gravura, 2026</p></article>
-              </div>
-            `
-          },
-          oelmalerei: {
-            title: "Pintura a óleo",
-            body: `
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🖼️ “Sonata de Outono”</div><h3>Sonata de Outono</h3><p>Óleo/tela, 100 × 80 cm, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🌄 “Montanhas na Luz”</div><h3>Montanhas na Luz</h3><p>Óleo sobre tela, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🍃 “Sussurro da Floresta”</div><h3>Sussurro da Floresta</h3><p>Pintura a óleo, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🎭 “Retrato Harmonia”</div><h3>Retrato Harmonia</h3><p>Óleo, 60 × 80 cm, 2026</p></article>
-              </div>
-              <div class="small-note">A pintura a óleo da Araras caracteriza-se por texturas ricas e luminosidade profunda. Cada obra é criada em várias camadas para alcançar uma densidade atmosférica especial.</div>
-            `
-          },
-          aquarelle: {
-            title: "Aquarelas",
-            body: `
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">💧 “Névoa da Manhã”</div><h3>Névoa da Manhã</h3><p>Aquarela, 2026</p></article>
-                <article class="art-card"><div class="placeholder-img">🌸 “Encanto das Flores”</div><h3>Encanto das Flores</h3><p>Aquarela sobre cartão para aquarela</p></article>
-                <article class="art-card"><div class="placeholder-img">🌊 “Jogo das Ondas”</div><h3>Jogo das Ondas</h3><p>Aquarela, 2026</p></article>
-              </div>
-              <div class="info-box"><p>As aquarelas destacam-se pela aplicação fluida das cores e pela leveza do momento. Inspiradas pela natureza, criam composições poéticas.</p></div>
-            `
-          },
-          radierungen: {
-            title: "Gravuras",
-            body: `
-              <div class="info-box"><p><strong>Gravuras</strong> – traços finos e fortes contrastes em preto e branco. Os trabalhos gráficos da Araras revelam uma preferência especial por linhas expressivas e superfícies texturizadas.</p></div>
-              <div class="art-grid">
-                <article class="art-card"><div class="placeholder-img">🖨️ “Metamorfose I”</div><h3>Metamorfose I</h3><p>Gravura, tiragem 15</p></article>
-                <article class="art-card"><div class="placeholder-img">✨ “Noturno”</div><h3>Noturno</h3><p>Gravura em ponta-seca, 2026</p></article>
-              </div>
-              <p class="meta-note">Publicado em 5 de março de 2026 pela redação</p>
-            `
-          },
-          ausstellungen: {
-            title: "Exposições",
-            body: `
-              <div class="vita-section">
-                <h3 style="margin-bottom: 0.8rem;">📅 Exposições individuais e coletivas</h3>
-                <ul class="vita-list">
-                  <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: “Mundos de Cor” (exposição individual)</li>
-                  <li><strong>2026</strong> – Kunstverein Bad Nauheim, exposição coletiva “Posições”</li>
-                  <li><strong>2026</strong> – Sala de exposições no Centro Cultural de Friedrichsdorf</li>
-                  <li><strong>2026</strong> – “Arte Jovem em Diálogo” – Wiesbaden</li>
-                  <li><strong>2026</strong> – Outras participações e feiras de arte</li>
-                </ul>
-                <p style="margin-top: 1rem;">Exposições regulares na Alemanha e no exterior desde 2026. Entre em contato para saber as próximas datas.</p>
-              </div>
-            `
-          },
-          vita: {
-            title: "Biografia",
-            body: `
-              <div class="vita-section">
-                <ul class="vita-list">
-                  <li>Nascida e criada em Allenstein, atualmente Polônia – formação artística influenciada por tradições da Europa Central.</li>
-                  <li>Estudos na Universidade Técnica de Gdańsk – primeira base artística sólida.</li>
-                  <li>Vive e trabalha na Alemanha há mais de 25 anos.</li>
-                </ul>
-                <h3 style="margin: 1rem 0 0.5rem;">Estudos, cursos e seminários</h3>
-                <ul class="vita-list">
-                  <li>2004–2005: Seminário de pintura a óleo na VHS</li>
-                  <li>2006–2007: Cursos de desenho com o Sr. Franke em Friedrichsdorf</li>
-                  <li>2008–2012: Escola noturna da Städelschule, Frankfurt am Main. Áreas de foco: desenho de modelo vivo, estudo de retratos, técnica de pintura, história da arte. Meios: lápis, óleo, aquarela, tinta.</li>
-                  <li>A partir de 2013: Academia Livre de Arte de Frankfurt – estudos avançados de pintura e artes gráficas</li>
-                </ul>
-                <h3 style="margin: 1rem 0 0.5rem;">Associações e trabalho voluntário</h3>
-                <ul class="vita-list">
-                  <li>2008–2018: Membro do Kunstkreis Friedrichsdorf</li>
-                  <li>2015–2016: Membro da diretoria do Kunstkreis Friedrichsdorf</li>
-                  <li>Desde 2016: Membro da “Die Palette Frankfurt am Main – Internationaler Ring der Kunstfreunde e.V.”</li>
-                  <li>Desde 2023: Membro da diretoria da “Die Palette”</li>
-                  <li>Membro do Kunstverein Bad Nauheim e.V.</li>
-                </ul>
-                <p style="margin-top: 1rem; background: #f5fff7; border: 1px solid #d6e8c8; padding: 0.6rem 0.8rem; border-radius: 20px;">Desde 2008 – numerosas exposições nacionais e internacionais.</p>
-              </div>
-            `
-          },
-          kontakt: {
-            title: "Contato",
-            body: `
-              <div class="contact-details">
-                <h3 style="font-weight: 700;">Araras – Ateliê Artístico</h3>
-                <p>E-mail para consultas, pedidos de exposição e contato com galerias:</p>
-                <div class="contact-email"><a href="mailto:info@araras.de">info@araras.de</a></div>
-                <p style="margin-top: 1.2rem;">Araras<br>Endereço postal disponível mediante solicitação.</p>
-                <hr style="max-width: 220px; margin: 1rem auto;">
-                <p style="font-size: 0.82rem;">Orgulhosamente apresentado como Azure Static Web App · 2026</p>
-              </div>
-            `
-          }
-        }
-      }
-    };
+<footer>
+© 2026 Araras
+</footer>
 
-    const defaultPage = "startseite";
-    let currentLang = localStorage.getItem("ararasLang") || "de";
+</div>
 
-    const navLinks = document.querySelectorAll(".nav-link");
-    const renderArea = document.getElementById("page-render");
-    const subtitle = document.getElementById("site-subtitle");
-    const footerMain = document.getElementById("footer-main");
-    const footerSub = document.getElementById("footer-sub");
-    const languageButtons = document.querySelectorAll(".language-switcher button");
+<script>
 
-    function sanitizeLang(lang) {
-      return translations[lang] ? lang : "de";
-    }
+let lang = "de";
 
-    function sanitizePageId(pageId) {
-      const langData = translations[sanitizeLang(currentLang)];
-      return Object.prototype.hasOwnProperty.call(langData.pages, pageId) ? pageId : defaultPage;
-    }
+const text = {
+de:{
+subtitle:"Ölmalerei · Aquarelle · Radierungen",
+home:"Willkommen auf der Kunstseite von Araras.",
+contact:"Kontakt: info@araras.de"
+},
+en:{
+subtitle:"Oil Paintings · Watercolors · Etchings",
+home:"Welcome to the art page of Araras.",
+contact:"Contact: info@araras.de"
+},
+pt:{
+subtitle:"Pintura a óleo · Aquarelas · Gravuras",
+home:"Bem-vindo à página de arte de Araras.",
+contact:"Contato: info@araras.de"
+}
+};
 
-    function getPageFromHash() {
-      const hash = window.location.hash.replace("#", "").trim();
-      return sanitizePageId(hash || defaultPage);
-    }
+function updateLang() {
+document.getElementById("subtitle").innerText = text[lang].subtitle;
+loadPage("start");
+}
 
-    function setActiveLink(activePageId) {
-      navLinks.forEach(link => {
-        const isActive = link.dataset.page === activePageId;
-        link.classList.toggle("active", isActive);
-        isActive ? link.setAttribute("aria-current", "page") : link.removeAttribute("aria-current");
-      });
-    }
+document.querySelectorAll(".language-switcher button").forEach(btn=>{
+btn.onclick=()=>{
+lang = btn.dataset.lang;
+document.querySelectorAll(".language-switcher button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+updateLang();
+};
+});
 
-    function updateStaticTexts() {
-      const langData = translations[currentLang];
+function loadPage(page){
 
-      document.documentElement.lang = langData.htmlLang;
-      subtitle.textContent = langData.subtitle;
-      footerMain.textContent = langData.footerMain;
-      footerSub.textContent = langData.footerSub;
+if(page==="start"){
+document.getElementById("content").innerHTML=`
+<p>${text[lang].home}</p>
+<div class="art-grid">
+<div class="art-card"><div class="placeholder">🎨</div><h3>Art 1</h3></div>
+<div class="art-card"><div class="placeholder">🎨</div><h3>Art 2</h3></div>
+</div>`;
+}
 
-      navLinks.forEach(link => {
-        const pageId = link.dataset.page;
-        link.textContent = langData.nav[pageId];
-      });
+if(page==="contact"){
+document.getElementById("content").innerHTML=`
+<p>${text[lang].contact}</p>`;
+}
 
-      languageButtons.forEach(button => {
-        button.classList.toggle("active-lang", button.dataset.lang === currentLang);
-      });
-    }
+}
 
-    function renderPage(pageId) {
-      const langData = translations[currentLang];
-      const safePageId = sanitizePageId(pageId);
-      const pageData = langData.pages[safePageId];
+updateLang();
 
-      renderArea.innerHTML = `
-        <h2 class="page-title">${pageData.title}</h2>
-        ${pageData.body}
-      `;
+</script>
 
-      setActiveLink(safePageId);
-      document.title = `${langData.titlePrefix} – ${pageData.title}`;
-    }
-
-    function handleRoute() {
-      currentLang = sanitizeLang(currentLang);
-      updateStaticTexts();
-      renderPage(getPageFromHash());
-    }
-
-    navLinks.forEach(link => {
-      link.addEventListener("click", event => {
-        event.preventDefault();
-
-        const pageId = sanitizePageId(link.dataset.page);
-        const currentHash = window.location.hash.replace("#", "");
-
-        if (currentHash !== pageId) {
-          window.location.hash = pageId;
-        } else {
-          renderPage(pageId);
-        }
-      });
-    });
-
-    languageButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        currentLang = sanitizeLang(button.dataset.lang);
-        localStorage.setItem("ararasLang", currentLang);
-        handleRoute();
-      });
-    });
-
-    window.addEventListener("hashchange", handleRoute);
-    handleRoute();
-  </script>
 </body>
 </html>
