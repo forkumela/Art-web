@@ -175,6 +175,17 @@
       padding: 1rem 1.5rem;
     }
 
+    .progress-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 2rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-strong);
+      text-align: center;
+    }
+
     .intro-box p + p,
     .info-box p + p,
     .contact-details p + p {
@@ -277,27 +288,6 @@
       border-radius: var(--radius-lg);
       margin-top: 1rem;
       padding: 1.2rem 1.6rem;
-    }
-
-    .vita-list {
-      list-style: none;
-      margin-top: 0.8rem;
-    }
-
-    .vita-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .vita-list li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.2rem;
-      position: absolute;
-      left: 0;
-      top: -1px;
     }
 
     .contact-details {
@@ -470,7 +460,8 @@
       .info-box,
       .vita-section,
       .contact-details,
-      .comment-section {
+      .comment-section,
+      .progress-box {
         padding: 1rem;
       }
 
@@ -706,50 +697,11 @@
           },
           ausstellungen: {
             title: "Ausstellungen",
-            body: `
-              <div class="vita-section">
-                <h3 style="margin-bottom: 0.8rem;">📅 Einzel- und Gruppenausstellungen</h3>
-                <ul class="vita-list">
-                  <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: „Farbwelten“ (Einzelausstellung)</li>
-                  <li><strong>2026</strong> – Kunstverein Bad Nauheim, Gruppenausstellung „Positionen“</li>
-                  <li><strong>2026</strong> – Ausstellungshalle im Kulturzentrum Friedrichsdorf</li>
-                  <li><strong>2026</strong> – „Junge Kunst im Dialog“ – Wiesbaden</li>
-                  <li><strong>2026</strong> – Weitere Beteiligungen und Kunstmessen</li>
-                </ul>
-                <p style="margin-top: 1rem;">Seit 2026 regelmäßige Ausstellungen im In- und Ausland. Kontaktieren Sie uns für kommende Termine.</p>
-              </div>
-            `
+            body: `<div class="progress-box">In Progress..........</div>`
           },
           vita: {
             title: "Vita",
-            body: `
-              <div class="vita-section">
-                <ul class="vita-list">
-                  <li>Geboren und aufgewachsen in Allenstein (heute Polen) – künstlerische Prägung durch mitteleuropäische Traditionen.</li>
-                  <li>Studium an der Technischen Universität Danzig – erstes fundiertes künstlerisches Fundament.</li>
-                  <li>Seit mehr als 25 Jahren in Deutschland lebend und arbeitend.</li>
-                </ul>
-
-                <h3 style="margin: 1rem 0 0.5rem;">Studium, Kurse und Seminare</h3>
-                <ul class="vita-list">
-                  <li>2004–2005: Ölmalereiseminar bei der VHS</li>
-                  <li>2006–2007: Zeichenkurse bei Herrn Franke in Friedrichsdorf</li>
-                  <li>2008–2012: Besuch der Abendschule der Staatlichen Hochschule für Bildende Künste Frankfurt a. M. – Städelschule.</li>
-                  <li>Ab 2013: Freie Kunstakademie Frankfurt – vertiefende Mal- und Grafikstudien</li>
-                </ul>
-
-                <h3 style="margin: 1rem 0 0.5rem;">Mitgliedschaften & Ehrenämter</h3>
-                <ul class="vita-list">
-                  <li>2008–2018: Mitglied des Kunstkreises Friedrichsdorf</li>
-                  <li>2015–2016: Vorstand des Kunstkreises Friedrichsdorf</li>
-                  <li>Seit 2016: Mitglied im Verein „Die Palette Frankfurt am Main – Internationaler Ring der Kunstfreunde e.V.“</li>
-                  <li>Seit 2023: Vorstand des Vereins „Die Palette“</li>
-                  <li>Mitglied des Kunstvereins Bad Nauheim e.V.</li>
-                </ul>
-
-                <p style="margin-top: 1rem; background: #f5fff7; border: 1px solid #d6e8c8; padding: 0.6rem 0.8rem; border-radius: 20px;">Seit 2008 – zahlreiche nationale und internationale Ausstellungen.</p>
-              </div>
-            `
+            body: `<div class="progress-box">In Progress..........</div>`
           },
           kontakt: {
             title: "Kontakt",
@@ -852,28 +804,11 @@
           },
           ausstellungen: {
             title: "Exhibitions",
-            body: `
-              <div class="vita-section">
-                <h3 style="margin-bottom: 0.8rem;">📅 Solo and Group Exhibitions</h3>
-                <ul class="vita-list">
-                  <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: “Color Worlds”</li>
-                  <li><strong>2026</strong> – Kunstverein Bad Nauheim, group exhibition “Positions”</li>
-                  <li><strong>2026</strong> – Further participations and art fairs</li>
-                </ul>
-              </div>
-            `
+            body: `<div class="progress-box">In Progress..........</div>`
           },
           vita: {
             title: "Biography",
-            body: `
-              <div class="vita-section">
-                <ul class="vita-list">
-                  <li>Born and raised in Allenstein, now Poland – artistically shaped by Central European traditions.</li>
-                  <li>Living and working in Germany for more than 25 years.</li>
-                  <li>Since 2008 – numerous national and international exhibitions.</li>
-                </ul>
-              </div>
-            `
+            body: `<div class="progress-box">In Progress..........</div>`
           },
           kontakt: {
             title: "Contact",
@@ -973,27 +908,11 @@
           },
           ausstellungen: {
             title: "Exposições",
-            body: `
-              <div class="vita-section">
-                <h3 style="margin-bottom: 0.8rem;">📅 Exposições individuais e coletivas</h3>
-                <ul class="vita-list">
-                  <li><strong>2026</strong> – Galerie Lichtblick, Frankfurt: “Mundos de Cor”</li>
-                  <li><strong>2026</strong> – Outras participações e feiras de arte</li>
-                </ul>
-              </div>
-            `
+            body: `<div class="progress-box">In Progress..........</div>`
           },
           vita: {
             title: "Biografia",
-            body: `
-              <div class="vita-section">
-                <ul class="vita-list">
-                  <li>Nascida e criada em Allenstein, atualmente Polônia.</li>
-                  <li>Vive e trabalha na Alemanha há mais de 25 anos.</li>
-                  <li>Desde 2008 – numerosas exposições nacionais e internacionais.</li>
-                </ul>
-              </div>
-            `
+            body: `<div class="progress-box">In Progress..........</div>`
           },
           kontakt: {
             title: "Contato",
