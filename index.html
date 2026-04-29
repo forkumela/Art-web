@@ -29,15 +29,9 @@
       --transition: 0.2s ease;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Georgia, "Times New Roman", Times, serif;
@@ -263,6 +257,22 @@
       padding: 0 0.7rem 0.4rem;
     }
 
+    .small-note,
+    .meta-note {
+      margin-top: 0.8rem;
+      color: #2f6540;
+    }
+
+    .small-note {
+      font-size: 0.88rem;
+      background: #f5fff7;
+      border: 1px solid var(--border);
+      padding: 0.8rem 1rem;
+      border-radius: 24px;
+    }
+
+    .meta-note { font-size: 0.85rem; }
+
     .vita-section {
       border-radius: var(--radius-lg);
       margin-top: 1rem;
@@ -310,19 +320,96 @@
       letter-spacing: 0.4px;
     }
 
-    .small-note {
-      margin-top: 0.8rem;
-      font-size: 0.88rem;
-      background: #f5fff7;
+    .comment-section {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fff3 100%);
       border: 1px solid var(--border);
-      padding: 0.8rem 1rem;
-      border-radius: 24px;
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: 0 10px 24px rgba(0, 80, 35, 0.08);
     }
 
-    .meta-note {
-      margin-top: 0.8rem;
-      font-size: 0.85rem;
+    .comment-section h3 {
+      font-size: 1.6rem;
+      color: var(--accent-strong);
+      margin-bottom: 0.5rem;
+    }
+
+    .comment-section p {
       color: #2f6540;
+      margin-bottom: 1.2rem;
+    }
+
+    .comment-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .comment-form label {
+      font-weight: 700;
+      color: #003f1f;
+      font-size: 0.9rem;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      margin-top: 0.35rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid #cfe5c4;
+      border-radius: 16px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1rem;
+      background: #ffffff;
+      color: #1f2d1f;
+    }
+
+    .comment-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: #009739;
+      box-shadow: 0 0 0 3px rgba(0, 151, 57, 0.15);
+    }
+
+    .form-consent {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: #2f6540;
+    }
+
+    .form-consent input {
+      width: auto;
+      margin-top: 0.2rem;
+    }
+
+    .comment-form button {
+      justify-self: start;
+      background: #009739;
+      color: #ffffff;
+      border: none;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      box-shadow: 0 6px 16px rgba(0, 80, 35, 0.18);
+    }
+
+    .comment-form button:hover {
+      background: #006b2d;
     }
 
     a {
@@ -330,9 +417,7 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     footer {
       background: var(--bg-nav);
@@ -350,17 +435,11 @@
     }
 
     @media (max-width: 680px) {
-      body {
-        padding: 1rem 0.5rem;
-      }
+      body { padding: 1rem 0.5rem; }
 
-      .site-title {
-        font-size: 1.8rem;
-      }
+      .site-title { font-size: 1.8rem; }
 
-      .site-subtitle {
-        font-size: 0.98rem;
-      }
+      .site-subtitle { font-size: 0.98rem; }
 
       .language-switcher button {
         width: 40px;
@@ -373,9 +452,7 @@
         min-height: auto;
       }
 
-      .page-title {
-        font-size: 1.55rem;
-      }
+      .page-title { font-size: 1.55rem; }
 
       .nav-link {
         padding: 0.5rem 0.85rem;
@@ -387,15 +464,18 @@
         height: 190px;
       }
 
-      .contact-email {
-        font-size: 1rem;
-      }
+      .contact-email { font-size: 1rem; }
 
       .intro-box,
       .info-box,
       .vita-section,
-      .contact-details {
+      .contact-details,
+      .comment-section {
         padding: 1rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -443,6 +523,81 @@
   </div>
 
   <script>
+    function commentForm(lang) {
+      const text = {
+        de: {
+          title: "Schreiben Sie einen Kommentar",
+          note: "Ihre E-Mail-Adresse wird nicht veröffentlicht. Pflichtfelder sind markiert.",
+          comment: "Kommentar",
+          name: "Name",
+          email: "E-Mail-Adresse",
+          website: "Website",
+          consent: "Name, E-Mail-Adresse und Website für meinen nächsten Kommentar speichern.",
+          button: "Kommentar abschicken"
+        },
+        en: {
+          title: "Leave a Comment",
+          note: "Your email address will not be published. Required fields are marked.",
+          comment: "Comment",
+          name: "Name",
+          email: "Email Address",
+          website: "Website",
+          consent: "Save my name, email address and website for my next comment.",
+          button: "Submit Comment"
+        },
+        pt: {
+          title: "Escreva um Comentário",
+          note: "O seu endereço de e-mail não será publicado. Campos obrigatórios estão marcados.",
+          comment: "Comentário",
+          name: "Nome",
+          email: "Endereço de e-mail",
+          website: "Website",
+          consent: "Salvar meu nome, e-mail e website para o próximo comentário.",
+          button: "Enviar comentário"
+        }
+      };
+
+      const t = text[lang] || text.de;
+
+      return `
+        <section class="comment-section">
+          <h3>${t.title}</h3>
+          <p>${t.note}</p>
+
+          <form class="comment-form" action="mailto:kleinestroch@t-online.de" method="post" enctype="text/plain">
+            <label>
+              ${t.comment} *
+              <textarea name="Kommentar" required></textarea>
+            </label>
+
+            <div class="form-row">
+              <label>
+                ${t.name} *
+                <input type="text" name="Name" required>
+              </label>
+
+              <label>
+                ${t.email} *
+                <input type="email" name="E-Mail" required>
+              </label>
+            </div>
+
+            <label>
+              ${t.website}
+              <input type="url" name="Website">
+            </label>
+
+            <label class="form-consent">
+              <input type="checkbox" name="Speichern" value="Ja">
+              <span>${t.consent}</span>
+            </label>
+
+            <button type="submit">${t.button}</button>
+          </form>
+        </section>
+      `;
+    }
+
     const translations = {
       de: {
         htmlLang: "de",
@@ -483,9 +638,10 @@
                   <p>Aquarell / Radierung, 2026</p>
                 </article>
               </div>
+
+              ${commentForm("de")}
             `
           },
-
           oelmalerei: {
             title: "Ölmalerei",
             body: `
@@ -506,7 +662,6 @@
               <div class="small-note">Die Ölmalerei von Araras zeichnet sich durch reiche Texturen und tiefe Leuchtkraft aus. Jedes Werk entsteht in mehreren Schichten, um eine besondere atmosphärische Dichte zu erreichen.</div>
             `
           },
-
           aquarelle: {
             title: "Aquarelle",
             body: `
@@ -527,11 +682,11 @@
               <div class="info-box"><p>Die Aquarelle bestechen durch ihren fließenden Farbauftrag und die Leichtigkeit des Augenblicks. Inspiriert von der Natur entstehen poetische Kompositionen.</p></div>
             `
           },
-
           radierungen: {
             title: "Radierungen",
             body: `
               <div class="info-box"><p><strong>Radierungen</strong> – feine Strichführung und tiefe Schwarz-Weiß-Kontraste. Die druckgrafischen Arbeiten von Araras zeigen eine besondere Vorliebe für expressive Linien und textile Oberflächen.</p></div>
+
               <div class="art-grid">
                 <article class="art-card">
                   <img src="pic1.jpeg" alt="Araras Radierung" class="art-image">
@@ -545,10 +700,10 @@
                   <p>Kaltnadelradierung, 2026</p>
                 </article>
               </div>
+
               <p class="meta-note">Geschrieben am 5. März 2026 von der Redaktion</p>
             `
           },
-
           ausstellungen: {
             title: "Ausstellungen",
             body: `
@@ -565,7 +720,6 @@
               </div>
             `
           },
-
           vita: {
             title: "Vita",
             body: `
@@ -597,7 +751,6 @@
               </div>
             `
           },
-
           kontakt: {
             title: "Kontakt",
             body: `
@@ -653,6 +806,8 @@
                   <p>Watercolor / Etching, 2026</p>
                 </article>
               </div>
+
+              ${commentForm("en")}
             `
           },
           oelmalerei: {
@@ -773,6 +928,8 @@
                   <p>Aquarela / Gravura, 2026</p>
                 </article>
               </div>
+
+              ${commentForm("pt")}
             `
           },
           oelmalerei: {
