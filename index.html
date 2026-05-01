@@ -175,17 +175,6 @@
       padding: 1rem 1.5rem;
     }
 
-    .progress-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 2rem;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--accent-strong);
-      text-align: center;
-    }
-
     .intro-box p + p,
     .info-box p + p,
     .contact-details p + p {
@@ -283,6 +272,33 @@
     }
 
     .meta-note { font-size: 0.85rem; }
+
+    .vita-section {
+      border-radius: var(--radius-lg);
+      margin-top: 1rem;
+      padding: 1.2rem 1.6rem;
+    }
+
+    .vita-list {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .vita-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .vita-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -1px;
+    }
 
     .contact-details {
       background: var(--bg-soft);
@@ -450,9 +466,9 @@
 
       .intro-box,
       .info-box,
+      .vita-section,
       .contact-details,
-      .comment-section,
-      .progress-box {
+      .comment-section {
         padding: 1rem;
       }
 
@@ -686,11 +702,21 @@
           },
           ausstellungen: {
             title: "Ausstellungen",
-            body: `<div class="progress-box">In Progress..........</div>`
+            body: `
+              <div class="vita-section">
+                <h3 style="margin-bottom: 1rem;">Ausstellungen in jüngerer Zeit</h3>
+                <ul class="vita-list">
+                  <li><strong>2005</strong> – Düsseldorf</li>
+                  <li><strong>2021</strong> – Stadthalle Kronberg</li>
+                  <li><strong>2022</strong> – Schloss Bad Homburg, Louissaal</li>
+                  <li><strong>2023</strong> – HSH Kreativmarkt</li>
+                </ul>
+              </div>
+            `
           },
           vita: {
             title: "Vita",
-            body: `<div class="progress-box">In Progress..........</div>`
+            body: `<div class="vita-section"><p><strong>In Progress..........</strong></p></div>`
           },
           kontakt: {
             title: "Kontakt",
@@ -759,6 +785,7 @@
                   <p>Oil painting, 2026</p>
                 </article>
               </div>
+
               <div class="small-note">The oil paintings of Araras-Art are characterized by rich textures and deep luminosity. Each work is created in multiple layers to achieve a distinctive atmospheric depth.</div>
             `
           },
@@ -772,6 +799,7 @@
                   <p>Watercolor, 2026</p>
                 </article>
               </div>
+
               <div class="info-box"><p>The watercolors stand out through fluid color application and a sense of lightness. Inspired by nature, they create poetic compositions.</p></div>
             `
           },
@@ -790,11 +818,21 @@
           },
           ausstellungen: {
             title: "Exhibitions",
-            body: `<div class="progress-box">In Progress..........</div>`
+            body: `
+              <div class="vita-section">
+                <h3 style="margin-bottom: 1rem;">Recent Exhibitions</h3>
+                <ul class="vita-list">
+                  <li><strong>2005</strong> – Düsseldorf</li>
+                  <li><strong>2021</strong> – Stadthalle Kronberg</li>
+                  <li><strong>2022</strong> – Bad Homburg Castle, Louissaal</li>
+                  <li><strong>2023</strong> – HSH Creative Market</li>
+                </ul>
+              </div>
+            `
           },
           vita: {
             title: "Biography",
-            body: `<div class="progress-box">In Progress..........</div>`
+            body: `<div class="vita-section"><p><strong>In Progress..........</strong></p></div>`
           },
           kontakt: {
             title: "Contact",
@@ -863,6 +901,7 @@
                   <p>Pintura a óleo, 2026</p>
                 </article>
               </div>
+
               <div class="small-note">A pintura a óleo da Araras-Art caracteriza-se por texturas ricas e luminosidade profunda.</div>
             `
           },
@@ -876,6 +915,7 @@
                   <p>Aquarela, 2026</p>
                 </article>
               </div>
+
               <div class="info-box"><p>As aquarelas destacam-se pela aplicação fluida das cores e pela leveza do momento.</p></div>
             `
           },
@@ -894,11 +934,21 @@
           },
           ausstellungen: {
             title: "Exposições",
-            body: `<div class="progress-box">In Progress..........</div>`
+            body: `
+              <div class="vita-section">
+                <h3 style="margin-bottom: 1rem;">Exposições recentes</h3>
+                <ul class="vita-list">
+                  <li><strong>2005</strong> – Düsseldorf</li>
+                  <li><strong>2021</strong> – Stadthalle Kronberg</li>
+                  <li><strong>2022</strong> – Castelo de Bad Homburg, Louissaal</li>
+                  <li><strong>2023</strong> – Mercado Criativo HSH</li>
+                </ul>
+              </div>
+            `
           },
           vita: {
             title: "Biografia",
-            body: `<div class="progress-box">In Progress..........</div>`
+            body: `<div class="vita-section"><p><strong>In Progress..........</strong></p></div>`
           },
           kontakt: {
             title: "Contato",
