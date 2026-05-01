@@ -30,7 +30,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -51,7 +50,6 @@
     }
 
     .site-header {
-      position: relative;
       text-align: center;
       padding: 2.5rem 1rem 1.5rem;
       border-bottom: 1px solid #f4d000;
@@ -173,6 +171,26 @@
       border: 1px solid var(--border);
       border-radius: 28px;
       padding: 1rem 1.5rem;
+    }
+
+    .bio-profile {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 1.5rem;
+      align-items: start;
+      margin-bottom: 1.2rem;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 26px;
+      border: 3px solid #ffdf00;
+      box-shadow: 0 10px 24px rgba(0, 80, 35, 0.18);
+      background: #f5fff7;
+      justify-self: end;
     }
 
     .intro-box p + p,
@@ -462,6 +480,16 @@
         height: 190px;
       }
 
+      .bio-profile {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        width: 155px;
+        height: 155px;
+        justify-self: start;
+      }
+
       .contact-email { font-size: 1rem; }
 
       .intro-box,
@@ -718,8 +746,13 @@
             title: "Vita",
             body: `
               <div class="vita-section">
-                <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
-                <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Selbstporträt</h4>
+                <div class="bio-profile">
+                  <div>
+                    <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
+                    <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Selbstporträt</h4>
+                  </div>
+                  <img src="profile.jpeg" alt="Genilda Spivak – Selbstporträt" class="profile-photo">
+                </div>
 
                 <p>Malerei ist eine Kunst, die aus der Tiefe des eigenen Wesens schöpft und keines akademischen Studiums bedarf. Farbsinn und Kreativität sind mir von Geburt an geschenkt. Auf meinen Leinwänden spiegelt sich meine Lebenserfahrung wider – auch jene Zeit in Brasilien, meinem Geburtsland, mit seiner sonnendurchfluteten Natur, seiner lebendigen Musik und seinem anmutigen Tanz …</p>
 
@@ -845,8 +878,13 @@
             title: "Biography",
             body: `
               <div class="vita-section">
-                <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
-                <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Self-Portrait</h4>
+                <div class="bio-profile">
+                  <div>
+                    <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
+                    <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Self-Portrait</h4>
+                  </div>
+                  <img src="profile.jpeg" alt="Genilda Spivak – Self-Portrait" class="profile-photo">
+                </div>
 
                 <p>Painting is an art that draws from the depth of one’s own being and does not require academic study. A sense of color and creativity were given to me from birth. My life experience is reflected on my canvases – including the time in Brazil, my country of birth, with its sun-filled nature, its vibrant music, and its graceful dance …</p>
 
@@ -972,8 +1010,13 @@
             title: "Biografia",
             body: `
               <div class="vita-section">
-                <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
-                <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Autorretrato</h4>
+                <div class="bio-profile">
+                  <div>
+                    <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
+                    <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Autorretrato</h4>
+                  </div>
+                  <img src="profile.jpeg" alt="Genilda Spivak – Autorretrato" class="profile-photo">
+                </div>
 
                 <p>A pintura é uma arte que nasce das profundezas do próprio ser e não depende de estudos acadêmicos. O senso de cor e a criatividade me foram dados desde o nascimento. Em minhas telas reflete-se a minha experiência de vida – também o tempo vivido no Brasil, meu país de nascimento, com sua natureza iluminada pelo sol, sua música vibrante e sua dança graciosa …</p>
 
