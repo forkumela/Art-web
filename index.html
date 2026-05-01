@@ -175,22 +175,38 @@
 
     .bio-profile {
       display: grid;
-      grid-template-columns: 1fr 180px;
-      gap: 1.5rem;
+      grid-template-columns: 360px 1fr;
+      gap: 2.4rem;
       align-items: start;
-      margin-bottom: 1.2rem;
     }
 
     .profile-photo {
-      width: 180px;
-      height: 180px;
+      width: 100%;
+      max-width: 360px;
+      height: 360px;
       object-fit: cover;
       object-position: center;
       border-radius: 26px;
       border: 3px solid #ffdf00;
-      box-shadow: 0 10px 24px rgba(0, 80, 35, 0.18);
+      box-shadow: 0 14px 30px rgba(0, 80, 35, 0.18);
       background: #f5fff7;
-      justify-self: end;
+    }
+
+    .bio-text h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1.45rem;
+      color: #003f1f;
+    }
+
+    .bio-text h4 {
+      margin-bottom: 1.2rem;
+      color: #2f6540;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .bio-text p + p {
+      margin-top: 1rem;
     }
 
     .intro-box p + p,
@@ -482,12 +498,12 @@
 
       .bio-profile {
         grid-template-columns: 1fr;
+        gap: 1.4rem;
       }
 
       .profile-photo {
-        width: 155px;
-        height: 155px;
-        justify-self: start;
+        max-width: 100%;
+        height: 280px;
       }
 
       .contact-email { font-size: 1rem; }
@@ -747,18 +763,19 @@
             body: `
               <div class="vita-section">
                 <div class="bio-profile">
-                  <div>
-                    <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
-                    <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Selbstporträt</h4>
-                  </div>
                   <img src="profile.jpeg" alt="Genilda Spivak – Selbstporträt" class="profile-photo">
+
+                  <div class="bio-text">
+                    <h3>Genilda Spivak</h3>
+                    <h4>Selbstporträt</h4>
+
+                    <p>Malerei ist eine Kunst, die aus der Tiefe des eigenen Wesens schöpft und keines akademischen Studiums bedarf. Farbsinn und Kreativität sind mir von Geburt an geschenkt. Auf meinen Leinwänden spiegelt sich meine Lebenserfahrung wider – auch jene Zeit in Brasilien, meinem Geburtsland, mit seiner sonnendurchfluteten Natur, seiner lebendigen Musik und seinem anmutigen Tanz …</p>
+
+                    <p>Bereits mit zwölf Jahren begann ich, T-Shirts und Wände zu bemalen. Die Stärke und der Mut, die mich auszeichnen, finden auch auf der Leinwand ihren Ausdruck. Meine Arbeiten sind erfüllt von Phantasie, geistreichem Humor und herzlicher Zuneigung. Ein besonderes Merkmal meiner Malerei ist der weitgehende Verzicht auf den Pinsel – ich male mit meinen bloßen Fingern, in die sich meine ganze Konzentration und Inspiration ergießt.</p>
+
+                    <p>Heute lebe und arbeite ich in Bad Homburg als Tagesmutter. In meiner freien Zeit male ich vorwiegend in Öl, daneben auch in Acryl.</p>
+                  </div>
                 </div>
-
-                <p>Malerei ist eine Kunst, die aus der Tiefe des eigenen Wesens schöpft und keines akademischen Studiums bedarf. Farbsinn und Kreativität sind mir von Geburt an geschenkt. Auf meinen Leinwänden spiegelt sich meine Lebenserfahrung wider – auch jene Zeit in Brasilien, meinem Geburtsland, mit seiner sonnendurchfluteten Natur, seiner lebendigen Musik und seinem anmutigen Tanz …</p>
-
-                <p style="margin-top: 1rem;">Bereits mit zwölf Jahren begann ich, T-Shirts und Wände zu bemalen. Die Stärke und der Mut, die mich auszeichnen, finden auch auf der Leinwand ihren Ausdruck. Meine Arbeiten sind erfüllt von Phantasie, geistreichem Humor und herzlicher Zuneigung. Ein besonderes Merkmal meiner Malerei ist der weitgehende Verzicht auf den Pinsel – ich male mit meinen bloßen Fingern, in die sich meine ganze Konzentration und Inspiration ergießt.</p>
-
-                <p style="margin-top: 1rem;">Heute lebe und arbeite ich in Bad Homburg als Tagesmutter. In meiner freien Zeit male ich vorwiegend in Öl, daneben auch in Acryl.</p>
               </div>
             `
           },
@@ -879,18 +896,19 @@
             body: `
               <div class="vita-section">
                 <div class="bio-profile">
-                  <div>
-                    <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
-                    <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Self-Portrait</h4>
-                  </div>
                   <img src="profile.jpeg" alt="Genilda Spivak – Self-Portrait" class="profile-photo">
+
+                  <div class="bio-text">
+                    <h3>Genilda Spivak</h3>
+                    <h4>Self-Portrait</h4>
+
+                    <p>Painting is an art that draws from the depth of one’s own being and does not require academic study. A sense of color and creativity were given to me from birth. My life experience is reflected on my canvases – including the time in Brazil, my country of birth, with its sun-filled nature, its vibrant music, and its graceful dance …</p>
+
+                    <p>At the age of twelve, I began painting T-shirts and walls. The strength and courage that define me also find expression on the canvas. My works are filled with imagination, witty humor, and heartfelt affection. A special feature of my painting is that I largely avoid using brushes – I paint with my bare fingers, into which my full concentration and inspiration flow.</p>
+
+                    <p>Today I live and work in Bad Homburg as a childminder. In my free time, I paint mainly in oil, and also in acrylic.</p>
+                  </div>
                 </div>
-
-                <p>Painting is an art that draws from the depth of one’s own being and does not require academic study. A sense of color and creativity were given to me from birth. My life experience is reflected on my canvases – including the time in Brazil, my country of birth, with its sun-filled nature, its vibrant music, and its graceful dance …</p>
-
-                <p style="margin-top: 1rem;">At the age of twelve, I began painting T-shirts and walls. The strength and courage that define me also find expression on the canvas. My works are filled with imagination, witty humor, and heartfelt affection. A special feature of my painting is that I largely avoid using brushes – I paint with my bare fingers, into which my full concentration and inspiration flow.</p>
-
-                <p style="margin-top: 1rem;">Today I live and work in Bad Homburg as a childminder. In my free time, I paint mainly in oil, and also in acrylic.</p>
               </div>
             `
           },
@@ -1011,18 +1029,19 @@
             body: `
               <div class="vita-section">
                 <div class="bio-profile">
-                  <div>
-                    <h3 style="margin-bottom: 0.35rem;">Genilda Spivak</h3>
-                    <h4 style="margin-bottom: 1rem; color: #2f6540; font-style: italic;">Autorretrato</h4>
-                  </div>
                   <img src="profile.jpeg" alt="Genilda Spivak – Autorretrato" class="profile-photo">
+
+                  <div class="bio-text">
+                    <h3>Genilda Spivak</h3>
+                    <h4>Autorretrato</h4>
+
+                    <p>A pintura é uma arte que nasce das profundezas do próprio ser e não depende de estudos acadêmicos. O senso de cor e a criatividade me foram dados desde o nascimento. Em minhas telas reflete-se a minha experiência de vida – também o tempo vivido no Brasil, meu país de nascimento, com sua natureza iluminada pelo sol, sua música vibrante e sua dança graciosa …</p>
+
+                    <p>Já aos doze anos comecei a pintar camisetas e paredes. A força e a coragem que me caracterizam também encontram expressão na tela. Meus trabalhos são preenchidos por fantasia, humor inteligente e afeto caloroso. Uma característica especial da minha pintura é a quase ausência do pincel – pinto com os dedos nus, nos quais se derramam toda a minha concentração e inspiração.</p>
+
+                    <p>Hoje vivo e trabalho em Bad Homburg como cuidadora de crianças. No meu tempo livre, pinto principalmente em óleo, mas também em acrílico.</p>
+                  </div>
                 </div>
-
-                <p>A pintura é uma arte que nasce das profundezas do próprio ser e não depende de estudos acadêmicos. O senso de cor e a criatividade me foram dados desde o nascimento. Em minhas telas reflete-se a minha experiência de vida – também o tempo vivido no Brasil, meu país de nascimento, com sua natureza iluminada pelo sol, sua música vibrante e sua dança graciosa …</p>
-
-                <p style="margin-top: 1rem;">Já aos doze anos comecei a pintar camisetas e paredes. A força e a coragem que me caracterizam também encontram expressão na tela. Meus trabalhos são preenchidos por fantasia, humor inteligente e afeto caloroso. Uma característica especial da minha pintura é a quase ausência do pincel – pinto com os dedos nus, nos quais se derramam toda a minha concentração e inspiração.</p>
-
-                <p style="margin-top: 1rem;">Hoje vivo e trabalho em Bad Homburg como cuidadora de crianças. No meu tempo livre, pinto principalmente em óleo, mas também em acrílico.</p>
               </div>
             `
           },
